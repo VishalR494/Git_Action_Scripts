@@ -14,6 +14,7 @@ on:
             
 jobs:
     on-push:     #job names
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:   #Steps to be executed in the jobs
             - name: "Running on Master push"   #Step 1
