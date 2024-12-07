@@ -10,9 +10,16 @@ on:
 jobs:
     hello_world:
         runs-on: ubuntu-latest
+        steps:   #Steps to be executed in the jobs
+            - name: "Running on Master push"   #Step 1
+              run: echo "Running on master push"
+
+
+    on-pull-request:
+        runs-on: ubuntu-latest
         steps:
          - name: "Print Hello World"
-           run: echo "hello world"
+           run: echo "hello"
 
          - name: "Print current Date"
            run: date

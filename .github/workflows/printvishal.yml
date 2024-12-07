@@ -8,9 +8,12 @@ on:
 
 
 jobs:
-    hello_Vishal:
+    hello_world:
         runs-on: ubuntu-latest
         steps:
-         - name: "Print Hello Vishal"
-           run: echo "Hello Vishal"
+         - name: "Print Hello World"
+           run: echo "hello world"
+
+         - name: "Print current Date"
+           run: date
             
