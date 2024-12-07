@@ -6,10 +6,16 @@ on:
             - master
             - test
             - prod
+        
+    schedule:
+    - cron: "0 10 * * 2,4"
     
     pull_request:
              branches:
                - master
+             types:
+             - closed
+             - opened
 
             
 jobs:
@@ -26,3 +32,9 @@ jobs:
               steps: #Steps to be executed in the jobs
                 - name: "Running on pull request" #Steps 2
                   run: echo "Running on pull request"
+    on-schedule: #job 3
+             if: github.event_name == 'schedule'
+             runs-on: ubuntu-latest
+             steps: #Steps to be executed in the jobs
+             - name: "Running on scheduled time" #Steps 3
+               run: echo "Running on scheduled time"
