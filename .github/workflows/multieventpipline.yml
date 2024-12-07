@@ -3,9 +3,9 @@ name: "Multi event pipeline/workflow" #Name of pipline
 on:
     push:    #Event : Whenever push is made on the master branch
         branches:
-            -master
-            -test
-            -prod
+            - master
+            - test
+            - prod
 
             
 jobs:

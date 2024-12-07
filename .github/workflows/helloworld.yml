@@ -1,19 +1,27 @@
-name: "Hello world workflow"
+name: "Multi event pipeline/workflow" #Name of pipline
 
 on:
-    push:
+    push:    #Event : Whenever push is made on the master branch
         branches:
-         - master
-         - production
+            -master
+            -test
+            -prod
+    pull_request:
+      branches:
+            -master
 
-
+            
 jobs:
-    hello_world:
+    on-push:     #job name
+        runs-on: ubuntu-latest
+        steps:   #Steps to be executed in the jobs
+            - name: "Running on Master push"   #Step 1
+              run: echo "Running on master push"
+
+
+    on-pull-request:
         runs-on: ubuntu-latest
         steps:
-         - name: "Print Hello World"
-           run: echo "hello"
-
-         - name: "Print current Date"
-           run: date
-            
+            - name: "Running on pull request"
+              run: echo "Running on pull request" 
+         
