@@ -9,7 +9,7 @@ on:
 
             
 jobs:
-    on-push:     #job name
+    on-push:     #job names
         runs-on: ubuntu-latest
         steps:   #Steps to be executed in the jobs
             - name: "Running on Master push"   #Step 1
